@@ -1,0 +1,26 @@
+version: 2
+
+models:
+  - name: monthly_customer_report_incremental
+    config:
+      meta:
+        surrogate_key: true
+    columns:
+      - name: surrogate_key_id
+        tests:
+          - unique
+          - not_null
+          - no_sk_gaps
+          - sk_starts_at_one
+  
+  - name: monthly_customer_report_table
+    config:
+      meta:
+        surrogate_key: true
+    columns:
+      - name: surrogate_key_id
+        tests:
+          - unique
+          - not_null
+          - no_sk_gaps
+          - sk_starts_at_one
